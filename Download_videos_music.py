@@ -11,11 +11,11 @@ def download(url,op):
 		print(f'{Fore.MAGENTA}Title: {Fore.GREEN} {yt.title}\n{Fore.MAGENTA}Author: {Fore.GREEN}{yt.author}')
 		if op == 1:
 			lista = yt.streams.filter(type="video")
-			for indice in range(len(lista)):print(f'{Fore.YELLOW}{indice+1}{lista[indice].mime_type}:resolution {lista[indice].resolution}')
+			for indice in range(len(lista)):print(f'{Fore.YELLOW}{indice+1}<<{lista[indice].mime_type}:resolution {lista[indice].resolution}')
 
 		elif op == 2:
 			lista = yt.streams.filter(type="audio")
-			for indice in range(len(lista)):print(f'{Fore.YELLOW}{indice+1}){lista[indice].mime_type}:resolution {lista[indice].abr}')
+			for indice in range(len(lista)):print(f'{Fore.YELLOW}{indice+1}<<{lista[indice].mime_type}:resolution {lista[indice].abr}')
 		try:
 			op = int(input('Enter option :\n>'))
 			path = open('cache.txt','r').read()
